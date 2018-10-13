@@ -1,0 +1,24 @@
+.outset {border-style: outset;
+		position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -50px;
+  margin-left: -280px
+  	}
+
+body {
+  background: #2d343d;
+}
+
+.login {
+  margin: auto;
+  width: 300px;
+  padding: 30px 25px;
+  background: white;
+  border: 5px red solid;
+}
+
+.title {
+    text-align: center;
+    color:Red;
+}
