@@ -9,19 +9,24 @@
 </head>
 <body>
     <div class="content">
-	<h1 class = title> Login Page </h1>
 	<img src="../Images/logo2.PNG" alt = "logo" id = "logo" class="topleft"> 
     <form id="myForm" action="" class="login">
+	<h1 class="title">Login</h1>
         <div>
-            <label>User Name</label>
-            <input type="text" name="username" id="username"/>
+            <input type="text" name="username" id="username" 
+            placeholder="User Name"/>
         </div>
         <div>
-            <label>Password</label>
-            <input type="password" name="password" id="password"/>
+            <input type="password" name="password" id="password"
+            placeholder="Password"/>
         </div>
-		<button id="submit" onclick="validate()"/>Login</button>
+        <div class="userRole">
+            <label><input type="radio" name="role" value="user" checked="checked">User</label>
+            <label><input type="radio" name="role" value="manger">Manger</label>
+        </div>
+		<button id="submit" onclick="validate()"/>Submit</button>
 	</form>
+    <p class="license">Business Tracker &copy; 2018</p>
     </div>
 </body>
 </html>

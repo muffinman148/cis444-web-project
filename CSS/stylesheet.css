@@ -1,7 +1,20 @@
 html, body {
     max-width: 100%;
     overflow-x: hidden;
-    background: #2d343d;
+    background: #f9f8f8;
+}
+
+h1, h2, h3, h4, h5, p, label {
+    font-family: "Open Sans";
+}
+
+button {
+    cursor: pointer;
+    transition: .2s;
+}
+
+button:hover {
+    opacity: .7;
 }
 
 .content {
@@ -12,44 +25,74 @@ html, body {
     margin-left: -50vw;
     margin-right: -50vw;
 }
+
+/* Login */
 .login {
-    margin: auto;
-    width: 300px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 20px;
+    max-width: 300px;
+    width: 100%;
     padding: 30px 25px;
     background: white;
     border: 2px white solid;
     border-radius: 4px;
     display: table;
-}
-.title {
-    text-align: center;
-    color:Red;
+    box-shadow: 0 0 15px 1px rgba(0,0,0,.1);
 }
 
+.title {
+    margin: 0 5px;
+    text-align: center;
+    color: #2DBC6A;
+}
 
 .topleft {
-    position: absolute;
-    top: 0px;
-    left: 0px;
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
 }
 
 label {
     display: inline-block;
 }
 #username, #password {
-    display: inline-block;
+    /* display: inline-block; */
     width: 100%;
+    box-sizing: border-box;
+    font-size: 14px;
+    padding: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-radius: 2px;
+    border: 1px solid #dbdbdb;
 }
 
 #submit {
-    background-color: blue;
-    border: 2px solid blue;
+    background-color: #2DBC6A;
+    border: 2px solid #2DBC6A;
     border-radius: 2px;
     color: white;
     width: 100%;
+    padding: 2px 5px;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.userRole {
+    font-size: 14px;
+    text-align: center;
+}
+.userRole label {
+    cursor: pointer;
 }
 
 .manager {
     background-color: orange;
 }
 
+.license {
+    color: grey;
+    text-align: center;
+}
+/* End Login */
