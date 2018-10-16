@@ -25,14 +25,14 @@ html, body {
     text-align: center;
     color:Red;
 }
-<<<<<<< HEAD
+
 
 .topleft {
     position: absolute;
     top: 0px;
     left: 0px;
 }
-=======
+
 label {
     display: inline-block;
 }
@@ -52,4 +52,4 @@ label {
 .manager {
     background-color: orange;
 }
->>>>>>> 3b90a5d2eb11c06a4dea68bb2763ccb480b18ed4
+
