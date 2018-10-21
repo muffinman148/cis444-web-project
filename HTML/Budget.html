@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+<head>
+	<title> Budget </title>
+	<meta charset="utf-8"/>
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+</head>
+<body>
+<img src="../Images/logo2.PNG" alt = "logo" id = "logo" class="topleft">
+<div id="piechart"></div>
+<script type="text/javascript">
+// Load google charts
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+
+// Draw the chart and set the chart values
+function drawChart() {
+  var data = google.visualization.arrayToDataTable([
+  ['budget', 'dollars'],
+  ['Approved', 4000],
+  ['waiting approval', 1500],
+  ['left', 8000]
+  
+]);
+
+  // Optional; add a title and set the width and height of the chart
+  var options = {'title':'Division Budget', 'width':550, 'height':400};
+
+  // Display the chart inside the <div> element with id="piechart"
+  var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+  chart.draw(data, options);
+}
+</script>
+	
+	<div style="height:250px;width:250px;border:1px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">
+	List of created orders will go here
+	</div>
+	<button id="submit" onclick="validate()"/>Home
+	<button id="submit" onclick="validate()"/>Create
+</body>
