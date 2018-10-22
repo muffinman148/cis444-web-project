@@ -5,16 +5,19 @@
 <title>Pending Requests</title>
 <meta charset = "utf-8" />
 <link rel="stylesheet" type="text/css" href="../CSS/stylesheet.css">
+    <img src="../Images/logo2.PNG" alt = "logo" id = "logo" class="topleft"> 
+	<nav class="navigation">
+        <a href="clientHome.html">Home</a> 
+		<a href="Create.html">Create Purchase Request</a>
+		<a href="viewRequests.html">View Pending Requests</a>
+		<a href="Budget.html">View Budget</a>
+		<a href="login.html">Sign Out</a>
+	</nav>
 </head>
-<img src="../Images/logo2.PNG" alt = "logo" id = "logo" class="topleft"> 
-<nav class="navigation"> 
-  <a href="clientHome.html">Home</a> 
-  <a href="Create.html">Create Request</a> 
-  <a href="Budget.html">View Budget</a> 
-</nav>
-<h1> Pending Requests </h1>
 <body>
-	<div>
+	<div class="content">
+        <div class="wrapper">
+        <h1> Pending Requests </h1>
 		<table border="1">
 			<tr>
 				<th>Employee Name</th>
@@ -30,8 +33,8 @@
 				<td>9/13/2018</td>
 				<td>9/20/2018</td>
 				<td>$134</td>
-				<td><button id="submit" onclick="validate()"/>Approve</td>
-				<td><button id="submit" onclick="validate()"/>Deny</td>
+				<td><button class="approveButton" onclick="validate()"/>Approve</td>
+				<td><button class="denyButton" onclick="validate()"/>Deny</td>
 				<td><input type="text" name="comment" id="comment"/></td>
 			</tr>
 			<tr>
@@ -39,8 +42,8 @@
 				<td>1/1/2018</td>
 				<td>1/7/2018</td>
 				<td>$2,345</td>
-				<td><button id="submit" onclick="validate()"/>Approve</td>
-				<td><button id="submit" onclick="validate()"/>Deny</td>
+				<td><button class="approveButton" onclick="validate()"/>Approve</td>
+				<td><button class="denyButton" onclick="validate()"/>Deny</td>
 				<td><input type="text" name="comment" id="comment"/></td>
 			</tr>
 			<tr>
@@ -48,8 +51,8 @@
 				<td>10/1/2018</td>
 				<td>10/7/2018</td>
 				<td>$8,912</td>
-				<td><button id="submit" onclick="validate()"/>Approve</td>
-				<td><button id="submit" onclick="validate()"/>Deny</td>
+				<td><button class="approveButton" onclick="validate()"/>Approve</td>
+				<td><button class="denyButton" onclick="validate()"/>Deny</td>
 				<td><input type="text" name="comment" id="comment"/></td>
 			</tr>
 			<tr>
@@ -57,12 +60,13 @@
 				<td>2/10/2018</td>
 				<td>2/17/2018</td>
 				<td>$598</td>
-				<td><button id="submit" onclick="validate()"/>Approve</td>
-				<td><button id="submit" onclick="validate()"/>Deny</td>
+				<td><button class="approveButton" onclick="validate()"/>Approve</td>
+				<td><button class="denyButton" onclick="validate()"/>Deny</td>
 				<td><input type="text" name="comment" id="comment"/></td>
 			</tr>
 		</table>
-	</div>
+        </div> <!-- End wrapper -->
+    </div> <!-- End content -->
 </body>
 </html>
 

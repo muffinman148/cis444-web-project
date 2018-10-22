@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang = "en">
-
 <head>
 	<title> Definition lists </title>
 	<meta charset="utf-8"/>
 	<link rel="stylesheet" type="text/css" href="../CSS/stylesheet.css">
-	
+	<img src="../Images/logo2.PNG" alt="logo" id="logo" class="topleft">
+    <nav class="navigation">
+        <a href="clientHome.html">Home</a> 
+        <a href="Create.html">Create Purchase Request</a>
+        <a href="viewRequests.html">View Pending Requests</a>
+        <a href="Budget.html">View Budget</a>
+        <a href="login.html">Sign Out</a>
+    </nav>
 </head>
-
 <body>
-	<img src="../Images/logo2.PNG" alt = "logo" id = "logo" class="topleft">
-	<nav class = "navigation">
-  		<a href="clientHome.html">Home</a> 
-  		<a href="viewRequests.html">View Pending Requests</a> 
-  		<a href="Budget.html">View Budget</a> 
-	</nav>
-	<div class = "content">
+	<div class="content">
+	<div class="wrapper">
 		<div>
 			<ul>
 				<li>Chair<input type = "text" id = "chair" size = "2"/></li>
@@ -37,18 +37,18 @@
 				<li>Pencil<input type = "text" id = "Pencil" size = "2"/></li>				
 			</ul>
 		</div>
-	<div>
-		<form action = "" method = "post">
-		<textarea name="comments" id="comments" style="font-family:ariel ;font-size:12 em;" cols="100" rows="10" >
-		
-		</textarea>
-		<br />
-		<br />
-	</div>
-		<button id="submit" onclick="validate()"/>Submit
-		<button id="cancel" onclick="validate()"/>cancel
-		<button id="approve" onclick="validate()"/>approve
-	</div>
+        <div>
+            <form action = "" method = "post">
+            <textarea name="comments" id="comments" style="font-family:ariel ;font-size:12 em;" cols="100" rows="10" >
+            </textarea>
+            <br />
+            <br />
+        </div>
+        <button class="submitButton" onclick="validate()"/>Submit</button>
+        <button class="cancelButton" onclick="validate()"/>Cancel</button>
+        <button class="approveButton" onclick="validate()"/>Approve</button>
+    </div> <!-- End wrapper -->
+    </div> <!-- End content -->
 </body>
 </html>
 		
