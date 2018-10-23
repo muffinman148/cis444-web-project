@@ -19,32 +19,9 @@
         <div class="wrapper">
         <h1> Pending Requests </h1>
 
-       <table class="form">
-            <tr>
-                <th>Search By</th>
-            </tr>
-            <!-- <th>Search By Name</th> -->
-            <!-- <th>Search By Department</th> -->
-            <!-- <th>Search By Date</th> -->
-            <tr>
-            	<td>
-            		<input type="text" name="orderBy" id="orderBy"/>	
-                    <button class="searchButton" onclick="validate()"/>Search</button>
-            	</td>
-                <!-- <td> -->
-                <!--     <input type="text" name="name" id="searchName"/>	 -->
-                <!-- </td> -->
-                <!-- <td> -->
-                <!--     <input type="text" name="Department" id="searchDep"/>	 -->
-                <!-- </td> -->
-                <!-- <td> -->
-                <!--     <input type="text" name="Date" id="orderDate"/>	 -->
-                <!-- </td> -->
-            </tr>
-        </table>
-        <br/>
-
-
+        <div class="searchForm">
+            <input type="text" name="orderBy" class="searchbar" placeholder="Search..."></input><button class="searchButton" onclick="validate()"/>Search</button>
+        </div>
 		<table border="1" class="form" style = "font-style: normal;">
 			<tr>
 				<th>Employee Name</th>

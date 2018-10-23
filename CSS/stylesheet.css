@@ -1,3 +1,4 @@
+/* Global Styling */
 html, body {
     max-width: 100%;
     overflow-x: hidden;
@@ -39,6 +40,13 @@ table { border-collapse: collapse; }
 th, td { padding: 5px 15px; }
 td button { margin: 0; }
 
+input, textarea {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+/* End Global Styling */
+
 /* Login */
 .login {
     margin-right: auto;
@@ -72,7 +80,6 @@ label {
 #username, #password {
     /* display: inline-block; */
     width: 100%;
-    box-sizing: border-box;
     font-size: 14px;
     padding: 5px;
     margin-top: 5px;
@@ -101,13 +108,18 @@ button.denyButton, .cancelButton {
 button.searchButton {
     background-color: #007BFF;
     border: 2px solid #007BFF;
-    float: left;
     width: auto;
-    margin-left: 5px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
 }
 
-#orderBy {
-    float: left;
+.searchbar {
+    padding-left: 5px;
+    font-size: 16.5px;
+}
+
+.searchForm {
+    margin-bottom: 10px;
 }
 
 .userRole {
@@ -167,37 +179,39 @@ button.searchButton {
     background: -moz-linear-gradient(bottom, #CCCCCC, #EEEEEE 175px);
     background: linear-gradient(bottom, #CCCCCC, #EEEEEE 175px);
     position: relative;
-    width: 550px;
-    height: 100%;
+    width: 100%;
+    /* height: 100%; */
     font-family: Tahoma, Geneva, sans-serif;
     font-size: 14px;
     font-style: italic;
     line-height: 24px;
-    font-weight: bold;
+    /* font-weight: bold; */
     color: #09C;
     text-decoration: none;
-    border-radius: 10px;
     padding: 10px;
     border: 1px solid #999;
     border: inset 1px solid #333;
-    -webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
-    -moz-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
-    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+    /* border-radius: 10px; */
+    /* -webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3); */
+    /* -moz-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3); */
+    /* box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3); */
 }
 
 .form input{
-    width: 200px;
+    width: 100%;
     display: block;
     border: 1px solid #999;
     height: 25px;
-    -webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
-    -moz-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
-    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+    padding-left: 5px;
+    /* -webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3); */
+    /* -moz-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3); */
+    /* box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3); */
 }
 
 .form textarea{
-    width:544px;
+    width: 100%;
     height: 150px;
+    padding: 5px;
 }
 
 .HomeBackground{
