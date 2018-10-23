@@ -178,7 +178,7 @@ button.denyButton, .cancelButton {
 }
 
 .form input{
-    width: 375px;
+    width: 200px;
     display: block;
     border: 1px solid #999;
     height: 25px;
@@ -191,3 +191,11 @@ button.denyButton, .cancelButton {
     width:544px;
     height: 150px;
 }
+
+.HomeBackground{
+    margin-left: -16%;
+    width:100vw;
+    height:100vh;
+}
+
+
