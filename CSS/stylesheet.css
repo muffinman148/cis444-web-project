@@ -112,6 +112,20 @@ button.searchButton {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
 }
+button.editUser {
+    background-color: #5FA2B8;
+    border: 2px solid #5FA2B8;
+    width: auto;
+}
+button.deleteUser {
+    background-color: #DC3545;
+    border: 2px solid #DC3545;
+    width: auto;
+}
+
+.adminTable td {
+    width: 100%;
+}
 
 .searchbar {
     padding-left: 5px;
