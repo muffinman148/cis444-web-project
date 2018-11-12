@@ -268,13 +268,15 @@ button.deleteUser {
     }
     
     .invoice-box table tr.top table td.title {
+		width: 300px;
         font-size: 45px;
         line-height: 45px;
         color: #333;
     }
 	
 	.invoice-box table tr.top table td.info {
-       text-align: right;
+		width: 200px;
+       text-align: left;
 	   
     }
     
@@ -303,4 +305,23 @@ button.deleteUser {
         text-align: center;
     }
     
-   
+   /*For Completed Requests Table*/
+   .completedRequests table{
+	   text-align: left;
+	   background: -webkit-linear-gradient(bottom, #CCCCCC, #EEEEEE 175px);
+		background: -moz-linear-gradient(bottom, #CCCCCC, #EEEEEE 175px);
+		background: linear-gradient(bottom, #CCCCCC, #EEEEEE 175px);
+		position: relative;
+		width: 100%;
+		/* height: 100%; */
+		font-family: Tahoma, Geneva, sans-serif;
+		font-size: 14px;
+		font-style: italic;
+		line-height: 24px;
+		/* font-weight: bold; */
+		color: #09C;
+		text-decoration: none;
+		padding: 10px;
+		border: 1px solid #999;
+		border: inset 1px solid #333;
+   }

@@ -7,6 +7,7 @@
 <link rel="stylesheet" type="text/css" href="../CSS/stylesheet.css">
     <img src="../Images/logo2.PNG" alt = "logo" id = "logo" class="topleft"> 
 	<nav class="navigation">
+		<a href="ManagerHome.html">Home</a> 
 		<a href="Budget.html">View Budget</a>
 		<a href="login.html">Sign Out</a>
 	</nav>
@@ -17,31 +18,16 @@
         <h1> Pending Requests </h1>
         <table class="form">
             <tr>
-                <th>Search By</th>
+                <th>Search For Order (Enter Order ID)</th>
             </tr>
             <tr>
                 <td>
                     <input type="text" name="orderBy" id="orderBy"/>	
                 </td>
+				<td>
+					<td><button class="viewButton" onClick="document.location.href='invoice.html'">Search</td>
+				</td>
             </tr>
-            <!-- <th>Search By Order</th> -->
-            <!-- <th>Search By Name</th> -->
-            <!-- <th>Search By Department</th> -->
-            <!-- <th>Search By Date</th> -->
-            <!-- <tr> -->
-            <!--     <td> -->
-            <!--         <input type="text" name="orderNum" id="orderNum"/>	 -->
-            <!--     </td> -->
-            <!--     <td> -->
-            <!--         <input type="text" name="name" id="searchName"/>	 -->
-            <!--     </td> -->
-            <!--     <td> -->
-            <!--         <input type="text" name="Department" id="searchDep"/>	 -->
-            <!--     </td> -->
-            <!--     <td> -->
-            <!--         <input type="text" name="Date" id="orderDate"/>	 -->
-            <!--     </td> -->
-            <!-- </tr> -->
         </table>
         <br>
 		<table class="form" action="invoice.html" style = "font-style: normal" id="Pending Requests">
@@ -104,6 +90,56 @@
 				<td><button class="denyButton"/>Deny</td>
 				<td><button class="viewButton" onClick="document.location.href='invoice.html'">View</td>
 				<td><input type="text" name="comment" id="comment"/></td>
+			</tr>
+		</table>
+        </div> <!-- End wrapper -->
+    </div> <!-- End content -->
+	
+	
+	<div class="content">
+        <div class="wrapper">
+        <h1> Completed Requests </h1>
+        <table class="form">
+            <tr>
+                <th>Search For Order (Enter Order ID)</th>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" name="corderBy" id="corderBy"/>	
+                </td>
+				<td>
+					<td><button class="viewButton" onClick="document.location.href='invoice.html'">Search</td>
+				</td>
+            </tr>
+        </table>
+        <br>
+		<table class="form" action="invoice.html" style = "font-style: normal" id="Completed Requests">
+			<tr align="left">
+				<th>Order ID</th>
+				<th>Employee Name</th>
+				<th>Department</th>
+				<th>Date Submitted</th>
+				<th>Date Due</th>
+				<th>Amount</th>
+				<th>View Order Details</th>
+			</tr>
+			<tr>
+				<td>091318-001</td>
+				<td>Lisa Ann</td>
+				<td>Accounting</td>
+				<td>9/13/2018</td>
+				<td>9/20/2018</td>
+				<td>$134</td>
+				<td><button class="viewButton" onClick="document.location.href='invoice.html'">View</td>
+			</tr>
+			<tr>
+				<td>01012018-001</td>
+				<td>Connor Still</td>
+				<td>Marketing</td>
+				<td>1/1/2018</td>
+				<td>1/7/2018</td>
+				<td>$2,345</td>
+				<td><button class="viewButton" onClick="document.location.href='invoice.html'">View</td>
 			</tr>
 		</table>
         </div> <!-- End wrapper -->
