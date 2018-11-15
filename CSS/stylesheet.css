@@ -325,3 +325,8 @@ button.deleteUser {
 		border: 1px solid #999;
 		border: inset 1px solid #333;
    }
+   
+   /*For text area on Create Request*/
+  textarea {
+  resize: none;
+}

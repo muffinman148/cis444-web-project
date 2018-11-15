@@ -1,45 +1,65 @@
 <!DOCTYPE html>
+<!--Budget Page -->
 <html lang = "en">
-
 <head>
-	<title> Budget </title>
-	<meta charset="utf-8"/>
-	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <link rel="stylesheet" type="text/css" href="../CSS/stylesheet.css">  
-    <script type="text/javascript">
-    // Load google charts
-    google.charts.load('current', {'packages':['corechart']});
-    google.charts.setOnLoadCallback(drawChart);
-
-    // Draw the chart and set the chart values
-    function drawChart() {
-        var data = google.visualization.arrayToDataTable([ ['budget', 'dollars'],
-        ['Approved', 4000],
-        ['waiting approval', 1500],
-        ['left', 8000]
-    ]);
-    // Optional; add a title and set the width and height of the chart
-    var options = {'title':'Division Budget', 'width':550, 'height':400};
-
-    // Display the chart inside the <div> element with id="piechart"
-    var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-    chart.draw(data, options);
-    }
-    </script>
-    <img src="../Images/logo2.png" alt = "logo" id = "logo" class="topleft">
-    <nav class="navigation">
-        <a href="managerHome.html">Home</a> 
-        <a href="Budget.html">View Budget</a>
-        <a href="login.html">Sign Out</a>
-    </nav>
+<title>Budget</title>
+<meta charset = "utf-8" />
+<link rel="stylesheet" type="text/css" href="../CSS/stylesheet.css">
+    <img src="../Images/logo2.PNG" alt = "logo" id = "logo" class="topleft"> 
+	<nav class="navigation">
+		<a href="ManagerHome.html">Home</a> 
+		<a href="login.html">Sign Out</a>
+	</nav>
 </head>
-<body>
-    <div class="content">
+<body>	
+	
+	<div class="content">
         <div class="wrapper">
-            <div id="piechart"></div>
-            <div style="height:250px;width:250px;border:1px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">
-                List of created orders will go here
-            </div>
+        <h1> Completed Requests </h1>
+        <table class="form">
+            <tr>
+                <th>Search For Order (Enter Order ID)</th>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" name="corderBy" id="corderBy"/>	
+                </td>
+				<td>
+					<td><button class="viewButton" onClick="document.location.href='invoice.html'">Search</td>
+				</td>
+            </tr>
+        </table>
+        <br>
+		<table class="form" action="invoice.html" style = "font-style: normal" id="Completed Requests">
+			<tr align="left">
+				<th>Order ID</th>
+				<th>Employee Name</th>
+				<th>Department</th>
+				<th>Date Submitted</th>
+				<th>Date Due</th>
+				<th>Amount</th>
+				<th>View Order Details</th>
+			</tr>
+			<tr>
+				<td>091318-001</td>
+				<td>Lisa Ann</td>
+				<td>Accounting</td>
+				<td>9/13/2018</td>
+				<td>9/20/2018</td>
+				<td>$134</td>
+				<td><button class="viewButton" onClick="document.location.href='invoice.html'">View</td>
+			</tr>
+			<tr>
+				<td>01012018-001</td>
+				<td>Connor Still</td>
+				<td>Marketing</td>
+				<td>1/1/2018</td>
+				<td>1/7/2018</td>
+				<td>$2,345</td>
+				<td><button class="viewButton" onClick="document.location.href='invoice.html'">View</td>
+			</tr>
+		</table>
         </div> <!-- End wrapper -->
     </div> <!-- End content -->
 </body>
+</html>
