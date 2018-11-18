@@ -4,7 +4,7 @@
 	<title> Create Requests </title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="../CSS/stylesheet.css">
-	<img src="../Images/logo2.PNG" alt="logo" class="topleft">
+	<img src="../Images/logo2.png" alt="logo" class="topleft">
 	<nav class="navigation">
 		<a href="userHome.html">Home</a>
 		<a href="login.html">Sign Out</a>
@@ -14,7 +14,7 @@
 	<div class="content">
 		<div class="wrapper">
 			<div>
-				<h1> Requests </h1>
+				<h1> Create Order </h1>
 				<table  class="form">
 					<tr>
 						<th>Item ID</th>
@@ -122,13 +122,35 @@
 							<input type="number" id="OFF-001" name="Ergonomic Keyboard" placeholder="Quantity">
 						</td>
 					</tr>
-
+					<tr>
+						<td colspan="5">
+							<textarea id="subject" name="subject" placeholder="Additional Notes.."></textarea>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="5">
+							Current Date: <input type="date" id="current-date" name="current-date">
+						</td>
+					</tr>
+					<tr>
+						<td colspan="5">
+							Due Date: <input type="date" id="due-date" name="due-date">
+						</td>
+					</tr>
+					<tr>
+						<td colspan="5">
+							<button class="submitButton"/>Submit</button>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="5">
+							<button class="cancelButton"/>Cancel</button>
+						</td>
+					</tr>
 				</table>
-				<button class="submitButton" onclick="validate()"/>Submit</button>
-				<button class="cancelButton" onclick="validate()"/>Cancel</button>
-        		<button class="approveButton" onclick="validate()"/>Approve</button>
 			</div>
 		</div>
 	</div>
+	<br><br>
 </body>
 </html>

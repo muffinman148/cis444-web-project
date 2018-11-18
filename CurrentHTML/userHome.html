@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<!--Home Page for users -->
+<html lang = "en">
+<head>
+    <title>User Home</title>
+    <meta charset = "utf-8" />
+    <link rel="stylesheet" type="text/css" href="../CSS/stylesheet.css">	
+    <img src="../Images/logo2.png" alt = "logo" id = "logo" class="topleft"> 
+	<nav class="navigation">
+        <a href="userHome.html">Home</a> 
+		<a href="CreateNew.html">Create Purchase Request</a>
+		<a href="login.html">Sign Out</a>
+	</nav>
+</head>
+<body>
+<div class="content">
+        <div class="wrapper">
+        <h1> Your Pending Requests </h1>
+        <table class="form">
+            <tr>
+                <th>Search For Order (Enter Order ID)</th>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" name="orderBy" id="orderBy"/>	
+                </td>
+				<td>
+					<td><button class="viewButton" onClick="document.location.href='invoice.html'">Search</td>
+				</td>
+            </tr>
+        </table>
+        <br>
+		<table class="form" action="invoice.html" style = "font-style: normal" id="User Pending Requests">
+			<tr align="left">
+				<th>Order ID</th>
+                <th>Date Submitted</th>
+				<th>Date Due</th>
+                <th>Order Amount</th>   
+                <th>Status</th>
+				<th>Cancel Order</th>
+				<th>View Order</th>
+			</tr>
+			<tr>
+				<td>091318-001</td>
+				<td>9/13/2018</td>
+				<td>9/20/2018</td>
+				<td>$1,344</td>
+				<td>Pending Approval</td>
+				<td><button class="denyButton"/>Cancel</td>
+				<td><button class="viewButton" onClick="document.location.href='invoice.html'">View</td>
+			</tr>
+		</table>
+        </div> <!-- End wrapper -->
+    </div> <!-- End content -->
+
+	<br><br>
+	
+    <div class="content">
+        <div class="wrapper">
+                <h1> Your Completed Requests</h1>
+				   <table class="form">
+            <tr>
+                <th>Search For Order (Enter Order ID)</th>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" name="orderBy" id="orderBy"/>	
+                </td>
+				<td>
+					<td><button class="viewButton" onClick="document.location.href='invoice.html'">Search</td>
+				</td>
+            </tr>
+        </table>
+		<br>
+                <table class="form" style = "font-style: normal" id="User Completed Request">
+				<tr align="left">
+                    <th>Order ID</th>
+                    <th>Date Submitted</th>
+					<th>Date Due</th>
+                    <th>Order Amount</th>   
+                    <th>Status</th>
+					<th>View Order</th>
+				</tr>
+				<tr>
+					<td>123-5401</td>
+					<td>10/31/2018</td>
+					<td>11/10/2018</td>
+					<td>$14,000</td>
+					<td>Pending Approval</td>
+					<td><button class="viewButton" onClick="document.location.href='invoice.html'">View</td>
+				</tr>
+                </table>
+                <br>
+                <br>
+        </div> <!-- End wrapper -->
+    </div> <!-- End content -->
+</body>
+</html>
