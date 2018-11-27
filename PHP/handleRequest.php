@@ -5,7 +5,7 @@
 		/*Set the status of the requst to "Approved" With the following query: UPDATE Orders SET Order_Status='Approved' WHERE Order_id=x;*/
 		$order_id=$_POST['id'];
 		//Connect to the database
-        	$mysqli = mysqli_connect("localhost","group3","38IkUwFEhxfq","group3");
+        $mysqli = mysqli_connect("localhost","group3","38IkUwFEhxfq","group3");
 		//Execute the query and use the order_ID obtained via post
 		$query1 = mysqli_query($mysqli,"UPDATE Orders SET Order_Status='Approved' WHERE Order_id=$order_id;");	
 	

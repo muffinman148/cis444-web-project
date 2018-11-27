@@ -7,4 +7,7 @@ function validate()
 		location.href="managerHome.html";
 	else
 		alert("Invalid username or password");
+
+    if(username=="") { alert("Username field is empty. Please input a valid username."); }
+    if(pass=="") { alert("Password field is empty. Please input a valid password."); }
 }
