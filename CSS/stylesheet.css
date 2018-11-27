@@ -101,7 +101,7 @@ button.approveButton, .approveButton {
     background-color: #28A745;
     border: 2px solid #28A745;
 }
-button.denyButton, .cancelButton {
+button.denyButton, .denyButton {
     background-color: #DC3545;
     border: 2px solid #DC3545;
 }
