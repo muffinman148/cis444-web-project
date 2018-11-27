@@ -10,9 +10,8 @@
     <link rel="stylesheet" type="text/css" href="../CSS/stylesheet.css">	
     <img src="../Images/logo2.png" alt = "logo" id = "logo" class="topleft"> 
 	<nav class="navigation">
-        <a href="managerHome.html">Home</a> 
-		<a href="CreateNew.html">Create Purchase Request</a>
-		<a href="Budget.html">View Budget</a>
+        <a href="managerHome.php">Home</a> 
+		<a href="Budget.php">View Budget</a>
 		<a href="login.html">Sign Out</a>
 	</nav>
 </head>

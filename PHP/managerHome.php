@@ -7,8 +7,8 @@
 <link rel="stylesheet" type="text/css" href="../CSS/stylesheet.css">
     <img src="../Images/logo2.png" alt = "logo" id = "logo" class="topleft"> 
 	<nav class="navigation">
-		<a href="ManagerHome.html">Home</a> 
-		<a href="Budget.html">View Budget</a>
+		<a href="managerHome.php">Home</a> 
+		<a href="budget.php">View Budget</a>
 		<a href="login.html">Sign Out</a>
 	</nav>
 </head>
@@ -72,21 +72,31 @@
 						echo "<td>$order_id</td>";
 						echo "<td>$empName</td>";
                                                 echo "<td>$empDepartment</td>";
-                                                echo "<td>$date_due</td>";
                                                 echo "<td>$date_submit</td>";
+                                                echo "<td>$date_due</td>";
                                                 echo "<td>$$amount</td>";
-						echo "<td><form method=\"post\" action=\"test.php\">
+						//Approve Button
+						echo "<td><form method=\"post\" action=\"handleRequest.php\">
 							 <input type=\"hidden\" name=\"id\" value=\"$order_id\"/>
 							 <input type=\"submit\" name=\"approve\" class=\"approveButton\" value=\"Approve\"/></form></td>";
-						echo "<td><button class='denyButton'/>Deny</td>";
+						//Deny Button
+						echo "<td><form method=\"post\" action=\"handleRequest.php\">
+                                                         <input type=\"hidden\" name=\"id\" value=\"$order_id\"/>
+                                                         <input type=\"submit\" name=\"deny\" class=\"denyButton\" value=\"Deny\"/></form></td>";
                                                 //View button, post the order_id and pass to the invoice.php page to load the order details on that specific order...
 						echo "<td><form method=\"post\" action=\"invoice.php\">
                                                          <input type=\"hidden\" name=\"id\" value=\"$order_id\"/>
                                                          <input type=\"submit\" name=\"approve\" class=\"viewButton\" value=\"View\"/></form></td>";
-						echo "<td><input type='text' name='comment' id='comment'/></td>";
+						//Add Comment
+						echo "<td><form method=\"post\" action=\"handleRequest.php\"\>
+							<input type=\"text\" name=\"theComment\" id=\"theComment\"/>
+							<input type=\"hidden\" name=\"id\" value=\"$order_id\"/>
+							<input type=\"submit\" name=\"comment\" class=\"viewButton\" value=\"Add\"/></form></td>";
 						//End Row
 						echo "</tr>";
 					}
+
+					
 
 				}
 			?>
