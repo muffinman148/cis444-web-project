@@ -46,6 +46,21 @@
                 if(window.confirm('Sucessfully added comment to Request #$order_id.'))
                         location.href = 'managerHome.php';
                 </script>";
-
+	}
+	//Cancel Request
+	else if(isset($_POST['cancel']))
+        {
+		//Set the order ID to the order ID of the request clicked
+		$order_id=$_POST['id'];
+		//Connect to the database
+                $mysqli = mysqli_connect("localhost","group3","38IkUwFEhxfq","group3");
+                //Execute the query and delete the request from the database since it was cancelled..
+		$query1 = mysqli_query($mysqli,"DELETE FROM Orders WHERE Order_id=$order_id;");
+		
+		//Alert the user that the request has been cancelled..
+		echo"<script>
+                if(window.confirm('Sucessfully cancelled Request #$order_id.'))
+                        location.href = 'userHome.php';
+                </script>";		
 	}
 ?>
