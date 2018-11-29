@@ -118,6 +118,15 @@ button.searchButton {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
 }
+
+button.createUser {
+    background-color: #007BFF;
+    border: 2px solid #007BFF;
+    width: auto;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
 button.editUser {
     background-color: #5FA2B8;
     border: 2px solid #5FA2B8;
@@ -129,8 +138,28 @@ button.deleteUser {
     width: auto;
 }
 
-.adminTable td {
-    width: 100%;
+button.createProduct {
+    background-color: #007BFF;
+    border: 2px solid #007BFF;
+    width: auto;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+button.editProduct {
+    background-color: #5FA2B8;
+    border: 2px solid #5FA2B8;
+    width: auto;
+}
+button.deleteProduct {
+    background-color: #DC3545;
+    border: 2px solid #DC3545;
+    width: auto;
+}
+
+.adminTable th,td{
+    border: 1px;
+    font-style: normal;
 }
 
 .searchbar {
