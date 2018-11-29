@@ -54,8 +54,10 @@
 		$order_id=$_POST['id'];
 		//Connect to the database
                 $mysqli = mysqli_connect("localhost","group3","38IkUwFEhxfq","group3");
-                //Execute the query and delete the request from the database since it was cancelled..
-		$query1 = mysqli_query($mysqli,"DELETE FROM Orders WHERE Order_id=$order_id;");
+                //Delete all info from Order_Details
+		$query1 = mysqli_query($mysqli,"DELETE FROM Order_Details WHERE Detail_Order_Id=$order_id;");
+		//Execute the query and delete the request from the database since it was cancelled..
+		$query2 = mysqli_query($mysqli,"DELETE FROM Orders WHERE Order_id=$order_id;");
 		
 		//Alert the user that the request has been cancelled..
 		echo"<script>
@@ -63,4 +65,49 @@
                         location.href = 'userHome.php';
                 </script>";		
 	}
+	//Manager search
+	else if(isset($_POST['msearch']))
+        {
+		$search_id=$_POST['searchBox'];
+		if(!is_numeric($search_id))
+		{
+			echo"<script>
+                	if(window.confirm('Error. Invalid OrderID entered. Please enter an integer value of a valid OrderID. Press OK to return to the homepage.'))
+                        	location.href = 'managerHome.php';
+                	</script>";
+		}
+		else
+		{
+			/*At this point we know that the Order_Id entered by the Manager is a valid integer value. Now we check if this order exists in the database*/
+			//Connect to the database
+                	$mysqli = mysqli_connect("localhost","group3","38IkUwFEhxfq","group3");
+                	//Delete all info from Order_Details
+                	$query1 = mysqli_query($mysqli,"SELECT EXISTS(SELECT * from Orders WHERE Order_Id=$search_id);");
+			$row = mysqli_fetch_Row($query1);
+			$quantity = $row[0];
+			/*If the OrderID is not found in the database alert the user and return home*/
+			if($quantity==0)
+			{
+				echo"<script>
+	                        if(window.confirm('Error. The OrderID That you entered does not exist. Press OK to return to the homepage.'))
+        	                        location.href = 'managerHome.php';
+                	        </script>";
+
+			}
+			/*If a valid OrderID is entered, pull up the invoice for that OrderID*/
+			else
+			{
+				/*Echo HTML form and use javascript to automatically submit the form*/
+				echo "<form id=\"f1\" action=\"invoice.php\" method=\"post\">
+				<input type=\"hidden\" name=\"id\" value=\"$search_id\"/></form>
+				<script type=\"text/javascript\">
+    				document.getElementById('f1').submit();
+				</script>";
+			}
+		}
+
+
+	}
+
+
 ?>

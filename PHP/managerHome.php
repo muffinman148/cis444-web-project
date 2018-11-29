@@ -15,35 +15,9 @@
 <body>
 	<div class="content">
         <div class="wrapper">
-        <h1> Pending Requests </h1>
-        <table class="form">
-            <tr>
-                <th>Search For Order (Enter Order ID)</th>
-            </tr>
-            <tr>
-                <td>
-                    <input type="text" name="orderBy" id="orderBy"/>	
-                </td>
-				<td>
-					<td><button class="viewButton" onClick="document.location.href='invoice.html'">Search</td>
-				</td>
-            </tr>
-        </table>
-        <br>
-		<table class="form" action="invoice.html" style = "font-style: normal" id="Pending Requests">
-			<tr>
-				<th>Order ID</th>
-				<th>Employee Name</th>
-				<th>Department</th>
-				<th>Date Submitted</th>
-				<th>Date Due</th>
-				<th>Amount</th>
-				<th>Approve</th>
-				<th>Deny</th>
-				<th>View Order Details</th>
-				<th>Add Comment</th>
-			</tr>
-			<?php
+			
+
+<?php
 				$mysqli = mysqli_connect("localhost","group3","38IkUwFEhxfq","group3");
 				if(mysqli_connect_errno())
 				{				
@@ -51,6 +25,35 @@
 				}
 				else
 				{
+					echo "<h1> Pending Requests </h1>";
+					//Search button
+  				        echo "<table class=\"form\">
+            				<tr><form method=\"post\" action=\"handleRequest.php\"\><th>Search For Order (Enter Order ID)</th></tr>
+            				<tr><td><input type=\"text\" name=\"searchBox\" id=\"searchBox\"/></td><td>
+					<td><input type=\"submit\" name=\"msearch\" class=\"viewButton\" value=\"Search\"/></td></form>
+            				</tr></table>
+        				<br>";
+	
+          	      			echo "<table class=\"form\" action=\"invoice.html\" style = \"font-style: normal\" id=\"Pending Requests\">
+                        		<tr>
+                                		<th>Order ID</th>
+                                		<th>Employee Name</th>
+                                		<th>Department</th>
+                                		<th>Date Submitted</th>
+                                		<th>Date Due</th>
+                                		<th>Amount</th>
+                                		<th>Approve</th>
+                                		<th>Deny</th>
+                                		<th>View Order Details</th>
+                                		<th>Add Comment</th>
+                        		</tr>";
+/*
+					//Search Button
+                                                echo "<td><form method=\"post\" action=\"handleRequest.php\"\>
+                                                        <input type=\"text\" name=\"theComment\" id=\"theComment\"/>
+                                                        <input type=\"hidden\" name=\"id\" value=\"$order_id\"/>
+                                                        <input type=\"submit\" name=\"comment\" class=\"viewButton\" value=\"Add\"/></form></td>";
+*/
 					//Find the orders with status of "Pending". All managers can see pending requests from any employee so we select all orders...
 					$query1 = mysqli_query($mysqli,"SELECT * FROM Orders WHERE Order_Status = 'Pending';");
 					while($row = mysqli_fetch_Row($query1))

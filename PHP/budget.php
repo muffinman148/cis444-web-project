@@ -77,7 +77,6 @@
                                                 echo "<td><form method=\"post\" action=\"invoice.php\">
                                                          <input type=\"hidden\" name=\"id\" value=\"$order_id\"/>
                                                          <input type=\"submit\" name=\"approve\" class=\"viewButton\" value=\"View\"/></form></td>";
-                                                echo "<td><input type='text' name='comment' id='comment'/></td>";
                                                 //End Row
                                                 echo "</tr>";
 
