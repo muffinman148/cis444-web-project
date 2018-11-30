@@ -47,13 +47,7 @@
                                 		<th>View Order Details</th>
                                 		<th>Add Comment</th>
                         		</tr>";
-/*
-					//Search Button
-                                                echo "<td><form method=\"post\" action=\"handleRequest.php\"\>
-                                                        <input type=\"text\" name=\"theComment\" id=\"theComment\"/>
-                                                        <input type=\"hidden\" name=\"id\" value=\"$order_id\"/>
-                                                        <input type=\"submit\" name=\"comment\" class=\"viewButton\" value=\"Add\"/></form></td>";
-*/
+					
 					//Find the orders with status of "Pending". All managers can see pending requests from any employee so we select all orders...
 					$query1 = mysqli_query($mysqli,"SELECT * FROM Orders WHERE Order_Status = 'Pending';");
 					while($row = mysqli_fetch_Row($query1))

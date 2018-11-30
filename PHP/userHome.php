@@ -17,22 +17,17 @@
         <div class="wrapper">
 <?php
 	//Display completed table...
-	echo "<h1> Your Pending Requests </h1>
-        <table class=\"form\">
-            <tr>
-                <th>Search For Order (Enter Order ID)</th>
-            </tr>
-            <tr>
-                <td>
-                    <input type=\"text\" name=\"orderBy\" id=\"orderBy\"/>
-                </td>
-                                <td>
-                                        <td><button class=\"viewButton\" onClick=\"document.location.href='invoice.php'\">Search</td>
-                                </td>
-            </tr>
-        </table>
-        <br>
-	<table class=\"form\" action=\"invoice.html\" style = \"font-style: normal\" id=\"User Pending Requests\">
+	echo "<h1> Your Pending Requests </h1>";
+	//Search button
+        echo "<table class=\"form\">
+        <tr><form method=\"post\" action=\"handleRequest.php\"\><th>Search For Order (Enter Order ID)</th></tr>
+        <tr><td><input type=\"text\" name=\"searchBox\" id=\"searchBox\"/></td><td>
+        <td><input type=\"submit\" name=\"ssearch\" class=\"viewButton\" value=\"Search\"/></td>
+	<td><input type=\"hidden\" name=\"theUserId\" id=\"theUserId\" value=104 /></td></form>
+        </tr></table>
+        <br>";
+
+	echo "<table class=\"form\" action=\"invoice.html\" style = \"font-style: normal\" id=\"User Pending Requests\">
                         <tr align=\"left\">
                                 <th>Order ID</th>
                 <th>Date Submitted</th>
@@ -83,12 +78,6 @@
 					//COMPLETED REQUEST TABLE
 					echo "<div class=\"content\"><div class=\"wrapper\">
                 				<h1> Your Completed Requests</h1>
-                                   		<table class=\"form\">
-            					<tr><th>Search For Order (Enter Order ID)</th></tr>
-            					<tr><td><input type=\"text\" name=\"orderBy\" id=\"orderBy\"/></td>
-                                		<td><td><button class=\"viewButton\" onClick=\"document.location.href='invoice.php'\">Search</td></td></tr>
-        					</table>
-                				<br>
                 				<table class=\"form\" style = \"font-style: normal\" id=\"User Completed Request\">
                         			<tr align=\"left\">
                     					<th>Order ID</th>

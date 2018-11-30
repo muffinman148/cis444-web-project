@@ -15,31 +15,6 @@
 	
 	<div class="content">
         <div class="wrapper">
-        <h1> Completed Requests </h1>
-        <table class="form">
-            <tr>
-                <th>Search For Order (Enter Order ID)</th>
-            </tr>
-            <tr>
-                <td>
-                    <input type="text" name="corderBy" id="corderBy"/>	
-                </td>
-				<td>
-					<td><button class="viewButton" onClick="document.location.href='invoice.html'">Search</td>
-				</td>
-            </tr>
-        </table>
-        <br>
-		<table class="form" action="invoice.html" style = "font-style: normal" id="Completed Requests">
-			<tr align="left">
-				<th>Order ID</th>
-				<th>Employee Name</th>
-				<th>Department</th>
-				<th>Date Submitted</th>
-				<th>Date Due</th>
-				<th>Amount</th>
-				<th>View Order Details</th>
-			</tr>
 
 		<?php
                                 $mysqli = mysqli_connect("localhost","group3","38IkUwFEhxfq","group3");
@@ -49,6 +24,28 @@
                                 }
                                 else
                                 {
+					 echo "<h1> Completed Requests </h1>";
+                                        //Search button
+                                        echo "<table class=\"form\">
+                                        <tr><form method=\"post\" action=\"handleRequest.php\"\><th>Search For Order (Enter Order ID)</th></tr>
+                                        <tr><td><input type=\"text\" name=\"searchBox\" id=\"searchBox\"/></td><td>
+                                        <td><input type=\"submit\" name=\"msearch\" class=\"viewButton\" value=\"Search\"/></td></form>
+                                        </tr></table>
+                                        <br>";
+					
+					echo "<table class=\"form\" action=\"invoice.php\" style = \"font-style: normal\" id=\"Completed Requests\">
+                        		<tr align=\"left\">
+                                		<th>Order ID</th>
+                                		<th>Employee Name</th>
+                                		<th>Department</th>
+                                		<th>Date Submitted</th>
+                                		<th>Date Due</th>
+                                		<th>Amount</th>
+                                		<th>View Order Details</th>
+                        		</tr>";
+
+		
+
                                         //Find the orders with status of "Approved". All managers can see completed requests from any employee so we select all orders...
                                         $query1 = mysqli_query($mysqli,"SELECT * FROM Orders WHERE Order_Status = 'Approved';");
                                         while($row = mysqli_fetch_Row($query1))

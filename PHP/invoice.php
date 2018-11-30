@@ -11,7 +11,7 @@
     <img src="../Images/logo2.png" alt = "logo" id = "logo" class="topleft"> 
 	<nav class="navigation">
         <a href="managerHome.php">Home</a> 
-		<a href="Budget.php">View Budget</a>
+		<a href="budget.php">View Budget</a>
 		<a href="login.html">Sign Out</a>
 	</nav>
 </head>
