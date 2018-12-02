@@ -53,6 +53,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $_SESSION["loggedin"] = true;
         $_SESSION["id"] = $id;
         $_SESSION["username"] = $username; 
+        $_SESSION["userrole"] = $role; 
 
         header("Location: userHome.php");
     } else { // Error with User input
