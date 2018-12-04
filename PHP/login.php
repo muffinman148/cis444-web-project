@@ -6,7 +6,10 @@ session_start();
 
 // If User is Logged in already, redirect to home
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
-    header("Location: userHome.php");
+    if($_SESSION["userrole"]==1)
+    	header("Location: userHome.php");
+    else if($_SESSION["userrole"]==2)
+	header("Location: managerHome.php");
     exit;
 }
 
@@ -54,8 +57,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $_SESSION["id"] = $id;
         $_SESSION["username"] = $username; 
         $_SESSION["userrole"] = $role; 
-
-        header("Location: userHome.php");
+	
+	if($_SESSION["userrole"]==1)
+        	header("Location: userHome.php");
+    	else if($_SESSION["userrole"]==2)
+        	header("Location: managerHome.php");
     } else { // Error with User input
         $usererror = "Username or password does not match. Please try again.";
     }

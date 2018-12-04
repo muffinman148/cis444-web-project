@@ -5,23 +5,23 @@
     <title>User Home</title>
     <meta charset = "utf-8" />
     <link rel="stylesheet" type="text/css" href="../CSS/stylesheet.css">	
-    <img src="../Images/logo2.png" alt = "logo" id = "logo" class="topleft"> 
-	<nav class="navigation">
-        <a href="userHome.html">Home</a> 
-		<a href="../CurrentHTML/CreateNew.html">Create Purchase Request</a>
-		<a href="../CurrentHTML/login.html">Sign Out</a>
-	</nav>
-</head>
-<body>
-<div class="content">
-        <div class="wrapper">
+    <img src="../Images/logo2.png" alt = "logo" id = "logo" class="topleft">
 <?php
+	session_start();
+	
+	require_once("menu.php");
+	createMenu();
+	
+	echo "</head><body><div class=\"content\"><div class=\"wrapper\">";	
+
+	$userName = $_SESSION["username"];
+	$role = $_SESSION["userrole"];
 	//Display completed table...
-	echo "<h1> Your Pending Requests </h1>";
+	echo "<h1> $userName's Pending Requests </h1>";
 	//Search button
         echo "<table class=\"form\">
-        <tr><form method=\"post\" action=\"handleRequest.php\"\><th>Search For Order (Enter Order ID)</th></tr>
-        <tr><td><input type=\"text\" name=\"searchBox\" id=\"searchBox\"/></td><td>
+        <tr><form method=\"post\" action=\"handleRequest.php\"\><th colspan=3>Search For Order (Enter Order ID)</th></tr>
+        <tr><td><input type=\"text\" name=\"searchBox\" id=\"searchBox\"/></td>
         <td><input type=\"submit\" name=\"ssearch\" class=\"viewButton\" value=\"Search\"/></td>
 	<td><input type=\"hidden\" name=\"theUserId\" id=\"theUserId\" value=104 /></td></form>
         </tr></table>
@@ -77,7 +77,7 @@
 
 					//COMPLETED REQUEST TABLE
 					echo "<div class=\"content\"><div class=\"wrapper\">
-                				<h1> Your Completed Requests</h1>
+                				<h1> $userName's Completed Requests</h1>
                 				<table class=\"form\" style = \"font-style: normal\" id=\"User Completed Request\">
                         			<tr align=\"left\">
                     					<th>Order ID</th>

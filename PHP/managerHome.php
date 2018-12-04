@@ -6,18 +6,16 @@
 <meta charset = "utf-8" />
 <link rel="stylesheet" type="text/css" href="../CSS/stylesheet.css">
     <img src="../Images/logo2.png" alt = "logo" id = "logo" class="topleft"> 
-	<nav class="navigation">
-		<a href="managerHome.php">Home</a> 
-		<a href="budget.php">View Budget</a>
-		<a href="login.html">Sign Out</a>
-	</nav>
-</head>
-<body>
-	<div class="content">
-        <div class="wrapper">
 			
-
 <?php
+				//Start Session
+				session_start();
+				//Include File and call function to create navigation bar
+        			require_once("menu.php");
+        			createMenu();
+				
+				echo "</head><body><div class=\"content\"><div class=\"wrapper\">";				
+
 				$mysqli = mysqli_connect("localhost","group3","38IkUwFEhxfq","group3");
 				if(mysqli_connect_errno())
 				{				
@@ -28,7 +26,7 @@
 					echo "<h1> Pending Requests </h1>";
 					//Search button
   				        echo "<table class=\"form\">
-            				<tr><form method=\"post\" action=\"handleRequest.php\"\><th>Search For Order (Enter Order ID)</th></tr>
+            				<tr><form method=\"post\" action=\"handleRequest.php\"\><th colspan=3>Search For Order (Enter Order ID)</th></tr>
             				<tr><td><input type=\"text\" name=\"searchBox\" id=\"searchBox\"/></td><td>
 					<td><input type=\"submit\" name=\"msearch\" class=\"viewButton\" value=\"Search\"/></td></form>
             				</tr></table>

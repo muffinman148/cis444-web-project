@@ -3,34 +3,41 @@
 <html lang = "en">
 <head>
 <?php
+	//Start the session to use same session
+	session_start();
+	//Store the order ID passed from previous page
 	$order_id=$_POST['id'];
+	//Use that order ID in the title
 	echo "<title>Invoice #$order_id</title>";
-?>
-    <meta charset = "utf-8" />
-    <link rel="stylesheet" type="text/css" href="../CSS/stylesheet.css">	
-    <img src="../Images/logo2.png" alt = "logo" id = "logo" class="topleft"> 
-	<nav class="navigation">
-        <a href="managerHome.php">Home</a> 
-		<a href="budget.php">View Budget</a>
-		<a href="login.html">Sign Out</a>
-	</nav>
-</head>
-<body>
-<br>
-<br>
-<br>
-</head>
+	//Store the user role
+	$role = $_SESSION["userrole"];
 
-<body>
-    <div class="invoice-box">
+	echo "<meta charset = \"utf-8\" />
+	<link rel=\"stylesheet\" type=\"text/css\" href=\"../CSS/stylesheet.css\">
+	<img src=\"../Images/logo2.png\" alt = \"logo\" id = \"logo\" class=\"topleft\">";
+	
+        //Include File and call function to create navigation bar
+        require_once("menu.php");
+        createMenu();
+
+	echo"</head>
+	<body>
+	<br><br><br>
+	</head>
+
+	<body>
+    	<div class=\"invoice-box\">
         <table>
-            <tr class="top">
-                <td colspan="5">
+            <tr class=\"top\">
+                <td colspan=\"5\">
                     <table>
                         <tr>
-			<td class="title"><img src="../Images/logo2.png" style="width:100%; max-width:300px;"></td>
-                        <td class = "info">
-			<?php
+                        <td class=\"title\"><img src=\"../Images/logo2.png\" style=\"width:100%; max-width:300px;\"></td>
+                        <td class = \"info\">
+
+	";
+
+
 				//Get the order ID from the order that was posted from the home page..
 				$order_id= $_POST['id'];
 				//Connect to the database
