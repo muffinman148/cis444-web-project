@@ -38,7 +38,9 @@
                                 <th>View Order</th>
                         </tr>";
 	//Connect to Database
-	$mysqli = mysqli_connect("localhost","group3","38IkUwFEhxfq","group3");
+	// $mysqli = mysqli_connect("localhost","group3","38IkUwFEhxfq","group3");
+    // My Local Database
+    $mysqli = mysqli_connect("localhost","group3","38IkUwFEhxfq","cis444");
                                 if(mysqli_connect_errno())
                                 {
                                         echo "Error - Cannot connect";
