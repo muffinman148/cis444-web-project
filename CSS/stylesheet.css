@@ -170,6 +170,19 @@ button.deleteUser {
     overflow: hidden;
 }
 
+.navigation.menuEmp {
+    background-color: #333;
+}
+
+.navigation.menuMan {
+    background-color: blue;
+}
+
+.navigation.menuAd {
+    background-color: red;
+}
+
+
 /* Style the links inside the navigation bar */
 .navigation a {
     float: left;
