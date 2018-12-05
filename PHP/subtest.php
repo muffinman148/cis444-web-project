@@ -8,7 +8,7 @@
 		$mysqli = mysqli_connect("localhost","group3","38IkUwFEhxfq","group3");
 		$total =0;
 		
-		mysqli_query($mysqli,"INSERT INTO Orders Values(NULL,NULL,'Pending','2018-12-03','2018-12-10',103,0);");
+		mysqli_query($mysqli,"INSERT INTO Orders Values(NULL,NULL,'Pending','2018-12-03','2018-12-10',".$_SESSION["employeeId"].",0);");
 		
 		
 		$query4 = mysqli_query($mysqli,"SELECT MAX(Order_id) FROM Orders; ");
@@ -43,7 +43,7 @@
 		//$query2 =  mysqli_query($mysqli,"INSERT INTO Order_Details VALUES(22,$quan,23244);");
 		
                 
-        header('location: PHP/managerHome.php');
+        header('location: managerHome.php');
 		
 		
 	}
