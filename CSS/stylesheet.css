@@ -101,16 +101,36 @@ button.approveButton, .approveButton {
     background-color: #28A745;
     border: 2px solid #28A745;
 }
-button.denyButton, .cancelButton {
+button.denyButton, .denyButton {
     background-color: #DC3545;
     border: 2px solid #DC3545;
 }
+
+button.viewButton, .viewButton {
+    background-color: #b7c0cf;
+    border: 2px solid #b7c0cf;
+}
+
 button.searchButton {
     background-color: #007BFF;
     border: 2px solid #007BFF;
     width: auto;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
+}
+button.editUser {
+    background-color: #5FA2B8;
+    border: 2px solid #5FA2B8;
+    width: auto;
+}
+button.deleteUser {
+    background-color: #DC3545;
+    border: 2px solid #DC3545;
+    width: auto;
+}
+
+.adminTable td {
+    width: 100%;
 }
 
 .searchbar {
@@ -149,6 +169,19 @@ button.searchButton {
     background-color: #333;
     overflow: hidden;
 }
+
+.navigation.menuEmp {
+    background-color: #333;
+}
+
+.navigation.menuMan {
+    background-color: blue;
+}
+
+.navigation.menuAd {
+    background-color: red;
+}
+
 
 /* Style the links inside the navigation bar */
 .navigation a {
@@ -216,4 +249,97 @@ button.searchButton {
 
 .HomeBackground{
     width:100vw;
+}
+
+/* For Invoice Below */
+
+.invoice-box {
+        max-width: 800px;
+        margin: auto;
+        padding: 30px;
+        border: 1px solid #eee;
+        box-shadow: 0 0 10px rgba(0, 0, 0, .15);
+        font-size: 16px;
+        line-height: 24px;
+        font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+        color: #555;
+    }
+    
+    .invoice-box table {
+        width: 100%;
+        line-height: inherit;
+        text-align: left;
+    }
+    
+    .invoice-box table td {
+        padding: 5px;
+        vertical-align: top;
+    }
+	
+    .invoice-box table tr.top table td {
+        padding-bottom: 20px;
+    }
+    
+    .invoice-box table tr.top table td.title {
+		width: 300px;
+        font-size: 45px;
+        line-height: 45px;
+        color: #333;
+    }
+	
+	.invoice-box table tr.top table td.info {
+		width: 200px;
+       text-align: left;
+	   
+    }
+    
+    .invoice-box table tr.information table td {
+        padding-bottom: 40px;
+    }
+    
+    .invoice-box table tr.heading td {
+        background: #eee;
+        border-bottom: 1px solid #ddd;
+        font-weight: bold;
+    }
+    
+    .invoice-box table tr.item td{
+        border-bottom: 1px solid #eee;
+    }
+    
+    .invoice-box table tr.total td:nth-child(5) {
+        border-top: 2px solid #eee;
+        font-weight: bold;
+    }
+       
+    .invoice-box table tr.information table td {
+        width: 100%;
+        display: block;
+        text-align: center;
+    }
+    
+   /*For Completed Requests Table*/
+   .completedRequests table{
+	   text-align: left;
+	   background: -webkit-linear-gradient(bottom, #CCCCCC, #EEEEEE 175px);
+		background: -moz-linear-gradient(bottom, #CCCCCC, #EEEEEE 175px);
+		background: linear-gradient(bottom, #CCCCCC, #EEEEEE 175px);
+		position: relative;
+		width: 100%;
+		/* height: 100%; */
+		font-family: Tahoma, Geneva, sans-serif;
+		font-size: 14px;
+		font-style: italic;
+		line-height: 24px;
+		/* font-weight: bold; */
+		color: #09C;
+		text-decoration: none;
+		padding: 10px;
+		border: 1px solid #999;
+		border: inset 1px solid #333;
+   }
+   
+   /*For text area on Create Request*/
+  textarea {
+  resize: none;
 }

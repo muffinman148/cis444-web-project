@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!--Home Page for admins -->
+<html lang = "en">
+<head>
+<title>Admin</title>
+<meta charset = "utf-8" />
+<link rel="stylesheet" type="text/css" href="../CSS/stylesheet.css">
+    <img src="../Images/logo2.png" alt = "logo" id = "logo" class="topleft"> 
+	<nav class="navigation">
+        <a href="admin.html">Home</a> 
+		<a href="Budget.html">View Budget</a>
+		<a href="login.html">Sign Out</a>
+	</nav>
+</head>
+<body>
+	<div class="content">
+        <div class="wrapper">
+        <h1> Pending Requests </h1>
+
+        <div class="searchForm">
+            <input type="text" name="orderBy" class="searchbar" placeholder="Search..."></input><button class="searchButton" onclick="validate()"/>Search</button>
+        </div>
+        <button>Create User</button>
+
+		<table border="1" class="form adminTable" style = "font-style: normal;">
+			<tr>
+				<th>Employee Name</th>
+				<th colspan="2">Admin Actions</th>
+			</tr>
+			<tr>
+				<td>Lisa Ann</td>
+                <td><button class="editUser">Edit</button></td>
+                <td><button class="deleteUser">Delete</button></td>
+			</tr>
+			<tr>
+				<td>Connor Still</td>
+                <td><button class="editUser">Edit</button></td>
+                <td><button class="deleteUser">Delete</button></td>
+			</tr>
+		</table>
+		 <br/>
+        </div> <!-- End wrapper -->
+    </div> <!-- End content -->
+</body>
+</html>
+
+
+

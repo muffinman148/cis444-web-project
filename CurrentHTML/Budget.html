@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!--Budget Page -->
+<html lang = "en">
+<head>
+<title>Budget</title>
+<meta charset = "utf-8" />
+<link rel="stylesheet" type="text/css" href="../CSS/stylesheet.css">
+    <img src="../Images/logo2.png" alt = "logo" id = "logo" class="topleft"> 
+	<nav class="navigation">
+		<a href="ManagerHome.html">Home</a> 
+		<a href="login.html">Sign Out</a>
+	</nav>
+</head>
+<body>	
+	
+	<div class="content">
+        <div class="wrapper">
+        <h1> Completed Requests </h1>
+        <table class="form">
+            <tr>
+                <th>Search For Order (Enter Order ID)</th>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" name="corderBy" id="corderBy"/>	
+                </td>
+				<td>
+					<td><button class="viewButton" onClick="document.location.href='invoice.html'">Search</td>
+				</td>
+            </tr>
+        </table>
+        <br>
+		<table class="form" action="invoice.html" style = "font-style: normal" id="Completed Requests">
+			<tr align="left">
+				<th>Order ID</th>
+				<th>Employee Name</th>
+				<th>Department</th>
+				<th>Date Submitted</th>
+				<th>Date Due</th>
+				<th>Amount</th>
+				<th>View Order Details</th>
+			</tr>
+			<tr>
+				<td>091318-001</td>
+				<td>Lisa Ann</td>
+				<td>Accounting</td>
+				<td>9/13/2018</td>
+				<td>9/20/2018</td>
+				<td>$134</td>
+				<td><button class="viewButton" onClick="document.location.href='invoice.html'">View</td>
+			</tr>
+			<tr>
+				<td>01012018-001</td>
+				<td>Connor Still</td>
+				<td>Marketing</td>
+				<td>1/1/2018</td>
+				<td>1/7/2018</td>
+				<td>$2,345</td>
+				<td><button class="viewButton" onClick="document.location.href='invoice.html'">View</td>
+			</tr>
+		</table>
+        </div> <!-- End wrapper -->
+    </div> <!-- End content -->
+</body>
+</html>
