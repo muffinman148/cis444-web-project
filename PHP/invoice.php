@@ -18,7 +18,6 @@
 	
         //Include File and call function to create navigation bar
         require_once("menu.php");
-        createMenu();
 
 	echo"</head>
 	<body>
