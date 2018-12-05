@@ -6,17 +6,11 @@
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="../CSS/stylesheet.css">
 	<img src="../Images/logo2.png" alt="logo" class="topleft">
-	<nav class="navigation">
-		<a href="managerHome.php">Home</a>
-		<a href="login.php">Sign Out</a>
-	</nav>
-</head>
-<body>
-	<div class="content">
-		<div class="wrapper">
 
 <?php
-			$mysqli = mysqli_connect("localhost","group3","38IkUwFEhxfq","group3");
+				require_once("menu.php");
+                        	echo "</head><body><div class=\"content\"><div class=\"wrapper\">";
+				$mysqli = mysqli_connect("localhost","group3","38IkUwFEhxfq","group3");
 				if(mysqli_connect_errno())
 				{				
 					echo "Error - Cannot connect";
