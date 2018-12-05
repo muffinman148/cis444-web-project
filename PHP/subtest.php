@@ -2,14 +2,14 @@
 	//submit button
 	if(isset($_POST['submit']))
 	{
+		session_start();
 		//Connect to the database
 		$quan = intval($_POST['Quantity-'.$Item_ID]);
-		//$_SESSION['employeeID'];
-		
+		$user_id = $_SESSION["employeeId"];	
 		$mysqli = mysqli_connect("localhost","group3","38IkUwFEhxfq","group3");
 		$total =0;
-		
-		mysqli_query($mysqli,"INSERT INTO Orders Values(NULL,NULL,'Pending',CURDATE(), TIMESTAMPADD(WEEK,1,CURDATE()),105,0);");
+		$role = $_SESSION["userrole"];	
+		mysqli_query($mysqli,"INSERT INTO Orders Values(NULL,NULL,'Pending',CURDATE(), TIMESTAMPADD(WEEK,1,CURDATE()),$user_id,0);");
 		
 		
 		$query4 = mysqli_query($mysqli,"SELECT MAX(Order_id) FROM Orders; ");
@@ -43,8 +43,12 @@
 		//$query1 = mysqli_query($mysqli,"INSERT INTO Orders Values(22,NULL,'Pending','2018-12-03','2018-12-10',103,521.00);");
 		//$query2 =  mysqli_query($mysqli,"INSERT INTO Order_Details VALUES(22,$quan,23244);");
 		
-                
-        header('location: managerHome.php');
+	if($role==1)
+        	header('location: userHome.php');
+	else if(($role==2)||($role==3))
+		header('location: managerHome.php');
+	else
+		echo "ERROR. Please sign in";
 		
 		
 	}
