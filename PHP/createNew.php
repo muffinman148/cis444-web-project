@@ -61,7 +61,7 @@
 						echo "<td>
 						
                               <input type=\"submit\" name=\"submit\" class=\"viewButton\" value=\"submit\"/></td>";
-						echo"<td> <input type=\"submit\" name=\"cancel\" class=\"viewButton\" value=\"cancel\"/></td>";
+						
 					
 					
 				}
