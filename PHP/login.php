@@ -1,9 +1,6 @@
 <?php
 require_once("db.php");
 
-// Create User Session
-session_start();
-
 // If User is Logged in already, redirect to home
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
 	if($_SESSION["userrole"] == 1)
@@ -42,9 +39,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $pass = $db -> quote($_POST['password']);
 
     // Select User Values
-    $query = $db -> select("SELECT `Emp_Name`, `Emp_Password`, `Emp_Authority` FROM `Employee` WHERE `Emp_Name` = " . $name . ";");
+    $query = $db -> select("SELECT `Emp_Id`,`Emp_Name`, `Emp_Password`, `Emp_Authority` FROM `Employee` WHERE `Emp_Name` = " . $name . ";");
 
     // Assign Associative Array Values to Variables
+    $userId = $query[0]['Emp_Id'];
     $user = $query[0]['Emp_Name'];
     $hash = $query[0]['Emp_Password'];
     $role = $query[0]['Emp_Authority'];
@@ -54,7 +52,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         session_start();
 
         $_SESSION["loggedin"] = true;
-        $_SESSION["id"] = $id;
+        $_SESSION["employeeId"] = $userId;
         $_SESSION["username"] = $username; 
         $_SESSION["userrole"] = $role; 
 	
@@ -97,7 +95,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 			<label><input type="radio" name="role" value="admin">Admin</label>
         </div>
         -->
-		<button id="submit" onsubmit="return false;">Submit</button>
+		<button id="submit" onsubmit="validate(); return false;">Submit</button>
 	</form>
     <p class="license">Business Tracker &copy; 2018</p>
     </div>
