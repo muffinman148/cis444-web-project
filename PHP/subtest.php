@@ -43,7 +43,7 @@
 		//$query2 =  mysqli_query($mysqli,"INSERT INTO Order_Details VALUES(22,$quan,23244);");
 		
                 
-        header('location: http://cis444.cs.csusm.edu/group3/BusinessTracker/PHP/managerHome.php');
+        header('location: PHP/managerHome.php');
 		
 		
 	}
