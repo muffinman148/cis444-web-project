@@ -60,7 +60,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 	
 	if($_SESSION["userrole"] == 1)
         	header("Location: userHome.php");
-    else if($_SESSION["userrole"] == 2 && $_SESSION["userrole"] == 3)
+    else if($_SESSION["userrole"] == 2 || $_SESSION["userrole"] == 3)
         	header("Location: managerHome.php");
     } else { // Error with User input
         $usererror = "Username or password does not match. Please try again.";

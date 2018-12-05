@@ -7,11 +7,8 @@
     <link rel="stylesheet" type="text/css" href="../CSS/stylesheet.css">	
     <img src="../Images/logo2.png" alt = "logo" id = "logo" class="topleft">
 <?php
-	session_start();
 	
 	require_once("menu.php");
-	createMenu();
-	
 	echo "</head><body><div class=\"content\"><div class=\"wrapper\">";	
 
 	$userName = $_SESSION["username"];
@@ -40,7 +37,7 @@
 	//Connect to Database
 	// $mysqli = mysqli_connect("localhost","group3","38IkUwFEhxfq","group3");
     // My Local Database
-    $mysqli = mysqli_connect("localhost","group3","38IkUwFEhxfq","cis444");
+    $mysqli = mysqli_connect("localhost","group3","38IkUwFEhxfq","group3");
                                 if(mysqli_connect_errno())
                                 {
                                         echo "Error - Cannot connect";
@@ -49,10 +46,12 @@
                                 {
 					//PENDING REQUEST TABLE		
 			
-					//Assuming user is ID 104. Will pull the userID from the session eventually..
-                                        $user_id = 104;
+					//Get User ID for the logged in User
+					$query0 = mysqli_query($mysqli,"SELECT Emp_Id FROM Employee WHERE Emp_Name='$userName';");
+					$theId = mysqli_fetch_Row($query0);
+					$user_id=$theId[0];
 					//Find the orders with status of "Pending" with the userID that matches the currently logged on user.
-                                        $query1 = mysqli_query($mysqli,"SELECT * FROM Orders WHERE Order_Status = 'Pending' AND Order_Emp_Id=104;");
+                                        $query1 = mysqli_query($mysqli,"SELECT * FROM Orders WHERE Order_Status = 'Pending' AND Order_Emp_Id=$user_id;");
                                         //Looop while there are pending orders..
 					while($row = mysqli_fetch_Row($query1))
                                         {
@@ -89,7 +88,7 @@
                     					<th>Status</th>
                                         		<th>View Order</th>
                                 		</tr>";
-					$query2 = mysqli_query($mysqli,"SELECT * FROM Orders WHERE Order_Status = 'Approved' AND Order_Emp_Id=104;");
+					$query2 = mysqli_query($mysqli,"SELECT * FROM Orders WHERE Order_Status = 'Approved' AND Order_Emp_Id=$user_id;");
 					//Looop while there are approved orders..
                                         while($row = mysqli_fetch_Row($query2))
                                         {

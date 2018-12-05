@@ -4,7 +4,7 @@ if(isset($_SESSION['username'])) { // User is Logged in
     if($_SESSION['userrole'] == 1) {         // Employee
         ?>
         <!-- HTML for Employee Menu -->
-        <nav class="navigation">
+        <nav class="navigation menuEmp">
             <a href="userHome.php">Home</a>         <!-- Employee Home Page -->
             <a href="createNew.php">Create Purchase Request</a> <!-- Create Request Page -->
             <a href="logout.php">Sign Out</a>
@@ -14,7 +14,7 @@ if(isset($_SESSION['username'])) { // User is Logged in
     } else if ($_SESSION['userrole'] == 2) { // Manager
         ?>
         <!-- HTML for Manager Menu -->
-        <nav class="navigation">
+        <nav class="navigation menuMan">
             <a href="managerHome.php">Home</a>     <!-- Manager Home Page -->
             <a href="budget.php">View Budget</a>    <!-- Budget Page -->
             <a href="createNew.php">Create Purchase Request</a> <!-- Create Request Page -->
@@ -25,7 +25,7 @@ if(isset($_SESSION['username'])) { // User is Logged in
     } else if ($_SESSION['userrole'] == 3) { // Admin
         ?>
         <!-- HTML for Admin Menu -->
-        <nav class="navigation">
+        <nav class="navigation menuAd">
             <a href="managerHome.php">Home</a>     <!-- Admin Home Page -->
             <a href="budget.php">View Budget</a>    <!-- Budget Page -->
             <a href="createNew.php">Create Purchase Request</a> <!-- Create Request Page -->

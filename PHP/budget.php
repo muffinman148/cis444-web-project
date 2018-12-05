@@ -9,11 +9,8 @@
 
 		<?php
                                 
-				//Start Session
-                                session_start();
                                 //Include File and call function to create navigation bar
                                 require_once("menu.php");
-                                createMenu();
 
 				echo "</head><body><div class=\"content\"><div class=\"wrapper\">";
 
@@ -41,13 +38,14 @@
                                 		<th>Date Submitted</th>
                                 		<th>Date Due</th>
                                 		<th>Amount</th>
+						<th>Status</th>
                                 		<th>View Order Details</th>
                         		</tr>";
 
 		
 
                                         //Find the orders with status of "Approved". All managers can see completed requests from any employee so we select all orders...
-                                        $query1 = mysqli_query($mysqli,"SELECT * FROM Orders WHERE Order_Status = 'Approved';");
+                                        $query1 = mysqli_query($mysqli,"SELECT * FROM Orders WHERE Order_Status = 'Approved' OR Order_Status='Denied';");
                                         while($row = mysqli_fetch_Row($query1))
                                         {
 						//Store Values
@@ -56,6 +54,7 @@
                                                 $date_due = $row[4];
                                                 $amount = $row[6];
                                                 $empID = $row[5];
+						$status = $row[2];
                                                 //Second Query needed for employee info
                                                 $query2 = mysqli_query($mysqli,"SELECT Emp_Name,EMP_Department FROM Employee WHERE Emp_Id=$empID;");
                                                 $row2 = mysqli_fetch_Row($query2);
@@ -69,7 +68,8 @@
                                                 echo "<td>$empDepartment</td>";
                                                 echo "<td>$date_submit</td>";
                                                 echo "<td>$date_due</td>";
-                                                echo "<td>$$amount</td>";
+                                                echo "<td>$amount</td>";
+						echo "<td>$status</td>";
 						//View button, post the order_id and pass to the invoice.php page to load the order details on that specific order...
                                                 echo "<td><form method=\"post\" action=\"invoice.php\">
                                                          <input type=\"hidden\" name=\"id\" value=\"$order_id\"/>

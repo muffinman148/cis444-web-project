@@ -1,5 +1,4 @@
 <?php
-	//Ensure same session is being used
 	session_start();
 	//End session
 	session_destroy();
